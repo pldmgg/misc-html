@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PCS · Post-Project Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Archivo:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Practical Coaching Solutions — refreshed system, sampled from real brand */
+    --bone: #FFF7EC;
+    --bone-2: #FFEED1;
+    --paper: #FFFBF3;
+    --ink: #1A0B12;           /* near-black, warm */
+    --ink-2: #2C1F25;
+    --iron: #6B5A60;
+    --mist: #C9B9BE;
+    --line: #2C1F25;
+    --signal: #F80038;        /* PCS RED — pulled straight from the logo */
+    --signal-deep: #C5002C;
+    --signal-soft: #FFD8E1;   /* pale red wash for backgrounds */
+    --sun: #FFC93C;           /* sunshine yellow — secondary accent */
+    --sun-soft: #FFF1B8;
+    --sky: #0EA5E9;           /* electric blue — tertiary */
+    --teal: #14B8A6;
+    --moss: #1F3A2E;
+    --plum: #6B1748;          /* deep companion to signal red */
+    --ok: #2F7D4C;
+
+    --f-display: 'Quicksand', 'Manrope', system-ui, sans-serif;
+    --f-body: 'Manrope', system-ui, sans-serif;
+    --f-mono: 'JetBrains Mono', monospace;
+  }
+  html, body { margin: 0; background: #FFE7B8; font-family: var(--f-body); color: var(--ink); }
+  * { box-sizing: border-box; }
+  /* Reusable atoms used inside artboards */
+  .pcs-eyebrow {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: lowercase;
+    color: var(--signal);
+  }
+  .pcs-eyebrow.muted { color: var(--iron); }
+  .pcs-h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .pcs-h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .pcs-h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .pcs-body { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+  .pcs-small { font-size: 13px; line-height: 1.5; color: var(--iron); }
+  .pcs-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--f-display); font-weight: 700;
+    font-size: 14px; letter-spacing: 0.01em;
+    border: none; border-radius: 999px; cursor: pointer;
+    text-decoration: none;
+  }
+  .pcs-btn.signal { background: var(--signal); color: white; }
+  .pcs-btn.sun { background: var(--sun); color: var(--ink); }
+  .pcs-btn.sky { background: var(--sky); color: white; }
+  .pcs-btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  .pcs-btn .arr { display: inline-block; transform: translateY(-1px); }
+
+  /* Image placeholder — diagonal hatch */
+  .pcs-img {
+    position: relative; overflow: hidden;
+    background: var(--bone-2);
+    background-image: repeating-linear-gradient(135deg, transparent 0 11px, rgba(14,15,14,0.06) 11px 12px);
+    border: 1px solid rgba(14,15,14,0.12);
+  }
+  .pcs-img::after {
+    content: attr(data-label);
+    position: absolute; left: 12px; bottom: 10px;
+    font-family: var(--f-mono); font-size: 10px;
+    color: var(--iron); letter-spacing: 0.06em;
+  }
+  .pcs-img.ink { background-color: var(--ink); background-image: repeating-linear-gradient(135deg, transparent 0 11px, rgba(244,240,232,0.08) 11px 12px); }
+  .pcs-img.ink::after { color: var(--mist); }
+
+  /* small inline icon style */
+  .pcs-ic { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Make sure artboard contents don't bleed */
+  .pcs-frame { position: relative; width: 100%; height: 100%; background: var(--paper); overflow: hidden; }
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#F80038">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F80038"/>
+    <circle cx="950" cy="200" r="180" fill="#FFC93C"/>
+    <circle cx="180" cy="640" r="120" fill="#0EA5E9" opacity="0.85"/>
+    <g font-family="Quicksand, sans-serif" font-weight="700" fill="#FFFBF3" letter-spacing="-12">
+      <text x="100" y="380" font-size="160">practical</text>
+      <text x="100" y="520" font-size="160">coaching</text>
+      <text x="100" y="660" font-size="160" fill="#1A0B12">solutions</text>
+    </g>
+    <text x="100" y="160" font-family="Quicksand, sans-serif" font-weight="700" font-size="34" fill="#FFC93C" letter-spacing="3">POST-PROJECT MOCKUPS</text>
+  </svg>
+</template>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="components/atoms.jsx"></script>
+<script type="text/babel" src="components/brand.jsx"></script>
+<script type="text/babel" src="components/website.jsx"></script>
+<script type="text/babel" src="components/action.jsx"></script>
+<script type="text/babel" src="components/external.jsx"></script>
+<script type="text/babel" src="components/prototype.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
